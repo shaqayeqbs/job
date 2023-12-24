@@ -32,15 +32,15 @@ function JobItem({ item, onExpand, isOpen }) {
     >
       <div className="mx-auto bg-background w-full h-full shadow-lg  overflow-hidden">
         <div className="px-[16px] pt-[16px] w-full ">
-          <div className=" w-full  p-0 items-center !gap-0  justify-between pb-[13px]">
-            <div className="float-left">
+          <div className=" flex justify-between  items-center !gap-0   pb-[13px]">
+            <div className="xl:float-left">
               <img
                 src="assets/profile.svg"
                 alt="Profile"
                 className="border-[1px] ml-2  border-secondary"
               />
             </div>
-            <div className="inline-block w-max ml-[16px]">
+            <div className="w-[calc(100%-73px)] xl:!ml-[-36px]">
               <div className="flex justify-between w-full ">
                 <h2 className="font-bold w-full !text-nowrap  text-secondary textmd mb-1">
                   {item.name}
