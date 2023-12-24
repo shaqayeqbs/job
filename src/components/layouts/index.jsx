@@ -7,7 +7,7 @@ function MainLayout() {
       <MainNavigation />
 
       {/* Main Content */}
-      <main className="  mt-3">
+      <main className="mt-[6px]">
         <Outlet />
       </main>
     </div>

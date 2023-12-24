@@ -9,10 +9,10 @@ import {
 
 function MainNavigation() {
   return (
-    <nav className="text-primary  bg-background p-4 ">
+    <nav className="text-primary flex !h-[48px] items-center bg-background p-4 ">
       <img src="/assets/logo.svg" className="!float-left inline-flex w-min" />
 
-      <div className="container w-max mx-auto flex items-center  justify-center">
+      <div className=" w-max mx-auto flex items-center !h-[33px] justify-center">
         <NavItem
           name="Messenger"
           icon={<ChatSquare />}
@@ -55,9 +55,9 @@ function NavItem({ name, icon, active, coloredChars }) {
 
   return (
     <div
-      className={`flex flex-col font-medium items-center mx-4 cursor-pointer ${activeStyles}`}
+      className={`flex flex-col font-medium items-center mx-[35px] cursor-pointer ${activeStyles}`}
     >
-      <div className="!w-[16px] !sh-[16px] font-bold">{icon}</div>
+      <div className="!w-[16px] !h-[16px] font-bold">{icon}</div>
       <span className="mt-1 text">
         {name.split("").map((char, index) => (
           <span

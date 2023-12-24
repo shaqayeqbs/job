@@ -26,19 +26,21 @@ function JobItem({ item, onExpand, isOpen }) {
 
   return (
     <div
-      className={`mb-  !w-full overflow-hidden 427   ${
+      className={`!w-full overflow-hidden  ${
         isOpen ? "h-[910px]" : "!h-full "
       }`}
     >
       <div className="mx-auto bg-background w-full h-full shadow-lg  overflow-hidden">
-        <div className="px-3 py-2">
-          <div className="flex w-full p-0  items- justify-around !gap-0 pb-3">
-            <img
-              src="assets/profile.svg"
-              alt="Profile"
-              className="border-[1px] border-secondary"
-            />
-            <div className="flex flex-col b">
+        <div className="px-[16px] pt-[16px] w-full ">
+          <div className=" w-full  p-0 items-center !gap-0  justify-between pb-[13px]">
+            <div className="float-left">
+              <img
+                src="assets/profile.svg"
+                alt="Profile"
+                className="border-[1px] ml-2  border-secondary"
+              />
+            </div>
+            <div className="inline-block w-max ml-[16px]">
               <div className="flex justify-between w-full ">
                 <h2 className="font-bold w-full !text-nowrap  text-secondary textmd mb-1">
                   {item.name}
@@ -47,9 +49,9 @@ function JobItem({ item, onExpand, isOpen }) {
                   <ThreeDotsVertical />
                 </div>
               </div>
-              <div className="w-full mb-2 bg-[white] rounded-full h-[3px] dark:bg-gray-700 mt-2">
+              <div className="!w-full mb-2 bg-[white] rounded-full h-[3px] dark:bg-gray-700 mt-2">
                 <div
-                  className="bg-[linear-gradient(90deg,#B6D2D7 0%, #005354 100%)] h-[3px] rounded-full"
+                  className=" h-[3px] rounded-full"
                   style={{
                     width: "65%",
                     background:
@@ -57,7 +59,7 @@ function JobItem({ item, onExpand, isOpen }) {
                   }}
                 ></div>
               </div>
-              <p className="text-primary text font-semibold">
+              <p className="text-primary w-[80%] text-[10px] font-semibold">
                 {item.profession}
               </p>
             </div>
@@ -67,33 +69,31 @@ function JobItem({ item, onExpand, isOpen }) {
               {gridItems.map((gridItem, index) => (
                 <div
                   key={index}
-                  className={`relative  group border-y-[1px]  border-border !text-left w-full mx-auto ${
+                  className={`relative h-[55px] group !border-y-[.5px]  border-border !text-left w-full mx-auto ${
                     index % 3 !== 2 ? "" : ""
                   } ${index < 3 ? "" : ""} ${
                     index >= 9 ? "" : ""
-                  } px-3 py-2  text-secondary`}
+                  } px-3 py-1  text-secondary`}
                 >
-                  <div
-                    className={`${
-                      index % 3 != 2 && " border-r-[1px] h-[3rem] border-border"
-                    }`}
-                  >
+                  <div>
                     {gridItem.image && (
                       <div className="flex gap-2">
-                        <img
-                          src={gridItem.image}
-                          alt="Flag"
-                          className="mb-2 w-6 h-6"
-                        />
+                        <img src={gridItem.image} alt="Flag" className="mb-1" />
                         <p className="font-semibold textmd">{gridItem.value}</p>
                       </div>
                     )}
                     {!gridItem.image && (
                       <p className="font-semibold ">{gridItem.value}</p>
                     )}
-                    <p className="text-primary text-[12px] font-bold text-left">
+                    <p className="text-primary !text-[12px] font-bold text-left">
                       {gridItem.label}
                     </p>
+                    <hr
+                      className={`${
+                        index % 3 !== 2 &&
+                        "absolute right-0 top-3 bottom-3 border-l-[.5px]  items-center !h-[28px]  my-auto border-border"
+                      }`}
+                    />
                   </div>
                 </div>
               ))}
@@ -102,7 +102,7 @@ function JobItem({ item, onExpand, isOpen }) {
         </div>
         <div className="px-6 pb-4">
           <button
-            className="text-secondary text-center text-md w-full font-bold py-2 px-4 rounded"
+            className="text-secondary text-center text-md w-full font-bold  px-4 rounded"
             onClick={toggleExpand}
           >
             Know More

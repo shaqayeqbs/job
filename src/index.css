@@ -14,6 +14,14 @@ body {
   @apply text-[14px]
 }
 
+.px {
+  @apply px-[55px]
+}
+
+.py {
+  @apply py-[55px]
+}
+
 body {
   margin: 0;
   font-family: 'Saira', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
