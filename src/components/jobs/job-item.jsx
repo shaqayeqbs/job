@@ -1,5 +1,5 @@
 import React from "react";
-
+import { ThreeDotsVertical } from "react-bootstrap-icons";
 function JobItem({ item, onExpand, isOpen }) {
   const toggleExpand = () => {
     onExpand(item.id);
@@ -30,14 +30,33 @@ function JobItem({ item, onExpand, isOpen }) {
         isOpen ? "h-[910px]" : "!h-full "
       }`}
     >
-      <div className="mx-auto bg-background w-full h-full shadow-lg rounded-lg overflow-hidden">
-        <div className="px-6 py-2">
-          <div className="flex  mb items-center pb-3">
-            <img src="assets/profile.svg" alt="Profile" className="mr-3" />
-            <div className="flex flex-col">
-              <h2 className="font-bold w-full !text-nowrap  text-secondary textmd mb-1">
-                {item.name}
-              </h2>
+      <div className="mx-auto bg-background w-full h-full shadow-lg  overflow-hidden">
+        <div className="px-3 py-2">
+          <div className="flex w-full p-0  items- justify-around !gap-0 pb-3">
+            <img
+              src="assets/profile.svg"
+              alt="Profile"
+              className="border-[1px] border-secondary"
+            />
+            <div className="flex flex-col b">
+              <div className="flex justify-between w-full ">
+                <h2 className="font-bold w-full !text-nowrap  text-secondary textmd mb-1">
+                  {item.name}
+                </h2>
+                <div className="text-primary">
+                  <ThreeDotsVertical />
+                </div>
+              </div>
+              <div className="w-full mb-2 bg-[white] rounded-full h-[3px] dark:bg-gray-700 mt-2">
+                <div
+                  className="bg-[linear-gradient(90deg,#B6D2D7 0%, #005354 100%)] h-[3px] rounded-full"
+                  style={{
+                    width: "65%",
+                    background:
+                      "linear-gradient(90deg, #B6D2D7 0%, #005354 100%)",
+                  }}
+                ></div>
+              </div>
               <p className="text-primary text font-semibold">
                 {item.profession}
               </p>
@@ -92,10 +111,12 @@ function JobItem({ item, onExpand, isOpen }) {
         {isOpen && (
           <div className="mt-[-3px] bg-background">
             <div className="w-full mx-auto rounded-lg overflow-hidden">
-              <div className="px-6 py-4 !h-[560px] overflow-hidden">
-                <h2 className="font-bold text-xl text-secondary text-md">
+              <div className="px-6 py-4 font-bold textmd !h-[560px] overflow-hidden">
+                <h2 className="text-secondary">United States of America</h2>
+                <p className="text-primary">COMPANY ADDRESS</p>
+                <p className=" text-secondary my-3 text-md">
                   {item.description}
-                </h2>
+                </p>
               </div>
             </div>
           </div>
