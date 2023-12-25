@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply bg-border;
+}
+
+.text {
+  @apply text-[10px]
+}
+
+.textmd {
+  @apply text-[14px]
+}
+
+.px {
+  @apply px-[55px]
+}
+
+.py {
+  @apply py-[55px]
+}

@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 import {
   ChatSquare,
   Search,
@@ -9,8 +10,13 @@ import {
 
 function MainNavigation() {
   return (
-    <nav className="text-primary flex !h-[48px] items-center bg-background p-4 ">
-      <img src="/assets/logo.svg" className="!float-left inline-flex w-min" />
+    <nav className="text-primary flex !h-[48px]  top-0 w-full items-center bg-background py-[7px] px-[36px] ">
+      <Image
+        src="/assets/logo.svg"
+        className="left-[36px] "
+        width={24}
+        height={33.74}
+      />
 
       <div className=" w-max mx-auto flex items-center !h-[33px] justify-center">
         <NavItem
@@ -57,7 +63,7 @@ function NavItem({ name, icon, active, coloredChars }) {
     <div
       className={`flex flex-col font-medium items-center mx-[35px] cursor-pointer ${activeStyles}`}
     >
-      <div className="!w-[16px] !h-[16px] font-bold">{icon}</div>
+      <div className="!w-[16px] !h-[16px] pt-[1px] font-bold">{icon}</div>
       <span className="mt-1 text">
         {name.split("").map((char, index) => (
           <span

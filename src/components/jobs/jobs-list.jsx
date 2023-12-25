@@ -1,3 +1,4 @@
+"use client";
 import React, { useState } from "react";
 import { jobsData } from "../../@core/data/jobs";
 import JobItem from "./job-item";
