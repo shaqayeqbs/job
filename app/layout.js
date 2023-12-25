@@ -1,8 +1,8 @@
-import { Inter } from "next/font/google";
+import { Saira } from "next/font/google";
 import "./globals.css";
 import MainLayout from "@/components/layouts";
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Saira({ subsets: ["latin"] });
 
 export const metadata = {
   title: "Job",
@@ -12,7 +12,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body>
+      <body className={inter.className}>
         <MainLayout />
         <div>{children}</div>
       </body>

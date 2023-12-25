@@ -29,7 +29,7 @@ function JobItem({ item, onExpand, isOpen }) {
       <div
         className={`${
           isOpen ? "!h-[860px]" : "h-[427px] "
-        } mx-auto bg-background w-[475px] shadow-lg  overflow-hidden`}
+        } mx-auto bg-background w-[475px] shadow-lg relative overflow-hidden`}
       >
         <div className="px-[16px] pt-[15px] w-full ">
           <div className=" flex justify-between  items-center !gap-0   pb-[11px]">
@@ -37,7 +37,7 @@ function JobItem({ item, onExpand, isOpen }) {
               <img
                 src="assets/profile.svg"
                 alt="Profile"
-                className="border-[1px] ml-2  border-secondary"
+                className="border-[1px] ml-2  rounded-[1px] border-secondary"
               />
             </div>
             <div className="w-[calc(100%-74px)] xl:!ml-[-36px]">
@@ -68,9 +68,9 @@ function JobItem({ item, onExpand, isOpen }) {
             <div className="grid  grid-cols-3 text-center ">
               {gridItems.map((gridItem, index) => (
                 <div key={index}>
-                  <hr className="border-y-1 w-full border-border" />
+                  <hr className="!border-y-1 w-full border-border" />
                   <div
-                    className={`relative w-[146px] !h-[55px] pt-[6px] group !border-y-[.5px]   !text-left mx-auto ${
+                    className={`relative w-[146px] !h-[55px] pt-[6px]    !text-left mx-auto ${
                       index % 3 !== 2 ? "" : ""
                     } ${index < 3 ? "" : ""} ${
                       index >= 9 ? "" : ""
@@ -122,24 +122,48 @@ function JobItem({ item, onExpand, isOpen }) {
                   <p className="font-semibold textmd">Montenegro</p>
                 </div>{" "}
               </div>
-              <div className="text-primary font-semibold ">REQUIRED SKILLS</div>
+              <div className=" text-primary font-semibold ">
+                REQUIRED SKILLS
+              </div>
             </div>
           </div>
         </div>
-        <div className="px-6 my-[12px] flex w-full !items-center  flex-col ">
-          <button
-            className="text-secondary  flex justify-center  items-center  text-center text-md w-full   px-4 rounded"
-            onClick={toggleExpand}
-          >
-            Know More
-          </button>
-        </div>
+        {isOpen && (
+          <div className="absolute  bottom-0 px-6 my-[12px] border-border border-t-[1px] pt-2  flex w-[calc(100%-26px)] left-3 right-3 mx-auto !items-center   ">
+            <div className=" bottom-0 flex w-full">
+              <button
+                className="text-primary  flex justify-center  items-center  text-center text-md w-full   px-4 rounded"
+                onClick={toggleExpand}
+              >
+                Cancel
+              </button>
+              <button
+                className="text-secondary text-nowrap  flex justify-center  items-center  text-center text-md w-full   px-4 rounded"
+                onClick={toggleExpand}
+              >
+                Send Resume
+              </button>
+            </div>
+          </div>
+        )}
+        {!isOpen && (
+          <div className="px-6 my-[12px] flex w-full !items-center  flex-col ">
+            <button
+              className="text-secondary  flex justify-center  items-center  text-center text-md w-full   px-4 rounded"
+              onClick={toggleExpand}
+            >
+              Know More
+            </button>
+          </div>
+        )}
         {isOpen && (
           <div className="bg-background ">
             <div className="w-full  mx-auto rounded-lg overflow-hidden">
               <div className="px-6 py-4 font-bold textmd  overflow-hidden">
                 <h2 className="text-secondary">United States of America</h2>
-                <p className="text-primary">COMPANY ADDRESS</p>
+                <p className="text-primary pb-3 border-b border-border">
+                  COMPANY ADDRESS
+                </p>
                 <p className=" text-secondary my-3 text-md">
                   {item.description}
                 </p>
